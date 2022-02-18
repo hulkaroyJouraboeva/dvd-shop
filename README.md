@@ -1,7 +1,7 @@
 # Welcome to your online DVD Shop
 
-[Heroku Deployment](https://dvd-shop.herokuapp.com/)
-[Netlify Deployment](https://dvd-shop.netlify.app/)
+- [Heroku Deployment](https://dvd-shop.herokuapp.com/)
+- [Netlify Deployment](https://dvd-shop.netlify.app/)
 <!-- 
 - select `use this template`
 - clone this repo
