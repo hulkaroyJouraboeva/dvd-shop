@@ -14,7 +14,7 @@ const getAllDvds = async () => {
 const getOneDvd = async (id) => {
     try {
         const oneDvd = await database.one(`
-            SELECT * FROM dvd_tb WHERE id=$1
+            SELECT * FROM dvd_tb WHERE id=$1;
         `, id);
         return oneDvd;
     } catch (error) {
@@ -22,7 +22,18 @@ const getOneDvd = async (id) => {
     };
 };
 
-
+const deleteDvd = async (id) => {
+    try {
+        const deletedDvd = await database.one(`
+            DELETE FROM dvd_tb
+            WHERE id=$1
+            RETURNING * ;
+        `, id);
+        return deletedDvd;
+    } catch (error) {
+        return error;
+    };
+};
 
 
 
