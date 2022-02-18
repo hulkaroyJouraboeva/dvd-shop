@@ -7,5 +7,10 @@ DROP TABLE IF EXISTS dvds_tb;
 
 CREATE TABLE dvds_tb (
     id SERIAL PRIMARY KEY, 
-    name TEXT NOT NULL
+    title TEXT NOT NULL,
+    image TEXT,
+    release_date TEXT,
+    runtime INT,
+    director TEXT,
+    is_favorite BOOLEAN
 );
