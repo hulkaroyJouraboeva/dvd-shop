@@ -1,11 +1,11 @@
-DROP DATABASE IF EXISTS cta_dev;
-CREATE DATABASE cta_dev;
+DROP DATABASE IF EXISTS dvds_db;
+CREATE DATABASE dvds_db;
 
-\c cta_dev;
+\c dvds_db;
 
-DROP TABLE IF EXISTS test;
+DROP TABLE IF EXISTS dvds_tb;
 
-CREATE TABLE test (
+CREATE TABLE dvds_tb (
     id SERIAL PRIMARY KEY, 
-    name TEXT
+    name TEXT NOT NULL
 );
