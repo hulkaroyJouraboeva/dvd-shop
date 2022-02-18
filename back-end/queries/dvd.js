@@ -35,7 +35,24 @@ const deleteDvd = async (id) => {
     };
 };
 
-
+const updateDvd = async ({ title, image, release_date, runtime, director, is_favorite }, id) => {
+    try {
+        const updatedDvd = await database.one(`
+            UPDATE dvd_tb
+            SET 
+                title=$1,
+                image=$2,
+                release_date=$3,
+                runtime=$4,
+                director=$5,
+                is_favorite=$6
+            WHERE id=$7 RETURNING * ;
+        `, [title, image, release_date, runtime, director, is_favorite, id]);
+        return updatedDvd;
+    } catch(error) {
+        return error;
+    };
+};
 
 
 module.exports = {
