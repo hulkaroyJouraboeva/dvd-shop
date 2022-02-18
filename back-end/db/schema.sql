@@ -1,11 +1,11 @@
-DROP DATABASE IF EXISTS dvds_db;
-CREATE DATABASE dvds_db;
+DROP DATABASE IF EXISTS dvd_db;
+CREATE DATABASE dvd_db;
 
-\c dvds_db;
+\c dvd_db;
 
-DROP TABLE IF EXISTS dvds_tb;
+DROP TABLE IF EXISTS dvd_tb;
 
-CREATE TABLE dvds_tb (
+CREATE TABLE dvd_tb (
     id SERIAL PRIMARY KEY, 
     title TEXT NOT NULL,
     image TEXT,

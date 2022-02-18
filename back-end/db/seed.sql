@@ -1,6 +1,6 @@
-\c dvds_db;
+\c dvd_db;
 
-INSERT INTO dvds_tb 
+INSERT INTO dvd_tb 
     (title, image, release_date, runtime, director, is_favorite) 
 VALUES
     ('Matrix', 'https://www.themoviedb.org/t/p/original/vybQQ7w7vGvF53IsGD0y0JSgIsA.jpg', 'March 31, 1999', 136, 'Lana Wachowski and Lilly Wachowski', TRUE),
