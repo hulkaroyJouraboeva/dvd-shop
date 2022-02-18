@@ -1,10 +1,10 @@
-\c cta_dev;
+\c dvds_db;
 
-INSERT INTO test (name) VALUES
-('Monday'),
-('Tuesday'),
-('Wednesday'),
-('Thursday'),
-('Friday'),
-('Saturday'),
-('Sunday');
+INSERT INTO dvds_tb (name) VALUES
+('Matrix'),
+('Matrix Reloaded'),
+('Matrix Revolutions'),
+('Wall-E'),
+('Interstellar'),
+('Sin City'),
+('History of Violence');

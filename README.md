@@ -1,9 +1,12 @@
-# PERN Final Project Template
+# Welcome to your online DVD Shop
 
+[Heroku Deployment](https://dvd-shop.herokuapp.com/)
+[Netlify Deployment](https://dvd-shop.netlify.app/)
+<!-- 
 - select `use this template`
 - clone this repo
 
-## Getting Started
+## testing 123
 
 ### Project Structure
 
@@ -166,6 +169,4 @@ The content of the `_redirects` file should be
 
 ```
 /* /index.html 200
-```
-
-[More info](https://www.netlify.com/blog/2016/07/22/deploy-react-apps-in-less-than-30-seconds/#main)
+``` -->
