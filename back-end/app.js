@@ -1,22 +1,28 @@
 // DEPENDENCIES
 const cors = require("cors");
 const express = require("express");
+const dvdsRoute = require("./controllers/dvdController");
 
 // CONFIGURATION
 const app = express();
 
 // MIDDLEWARE
 app.use(cors());
-app.use(express.json()); // Parse incoming JSON
+app.use(express.json()); // Parse incoming (as) JSON
 
 // ROUTES
-app.get("/", (req, res) => {
-  res.send("Hello, world!");
+app.get("/", (request, response) => {
+  console.log("Request to GET at /");
+  response.send("Hello, world!");
 });
+
+app.use('/dvds', dvdsRoute);
+
 
 /////////////////////////////////////
 // REMOVE AFTER SUCCESSFUL DEPLOYMENT
 /////////////////////////////////////
+
 const db = require("./db/dbConfig.js");
 
 app.get("/test", async (req, res) => {
@@ -26,6 +32,10 @@ app.get("/test", async (req, res) => {
   } catch (err) {
     res.json(err);
   }
+});
+app.get("*", (_, response) => {
+  console.log("Invalid URL detected");
+  response.status(404).json({ error: "Page not found" });
 });
 
 /////////////////////////////////////
