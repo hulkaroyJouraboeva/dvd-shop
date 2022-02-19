@@ -16,7 +16,7 @@ app.get("/", (request, response) => {
   response.send("Hello, world!");
 });
 
-app.use('/dvds', dvdsRoute);
+app.use("/dvds", dvdsRoute);
 
 app.get("*", (_, response) => {
   console.log("Invalid URL detected");
