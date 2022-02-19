@@ -18,6 +18,10 @@ app.get("/", (request, response) => {
 
 app.use('/dvds', dvdsRoute);
 
+app.get("*", (_, response) => {
+  console.log("Invalid URL detected");
+  response.status(404).json({ error: "Page not found" });
+});
 
 /////////////////////////////////////
 // REMOVE AFTER SUCCESSFUL DEPLOYMENT
@@ -32,10 +36,6 @@ app.get("/test", async (req, res) => {
   } catch (err) {
     res.json(err);
   }
-});
-app.get("*", (_, response) => {
-  console.log("Invalid URL detected");
-  response.status(404).json({ error: "Page not found" });
 });
 
 /////////////////////////////////////
