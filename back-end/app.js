@@ -18,25 +18,25 @@ app.get("/", (request, response) => {
 
 app.use("/dvds", dvdsRoute);
 
-app.get("*", (_, response) => {
+app.get("*", (request, response) => {
   console.log("Invalid URL detected");
-  response.status(404).json({ error: "Page not found" });
+  response.status(404).json({ error: `Page not found, request to ${request.path} failed` });
 });
 
 /////////////////////////////////////
 // REMOVE AFTER SUCCESSFUL DEPLOYMENT
 /////////////////////////////////////
 
-const db = require("./db/dbConfig.js");
+// const db = require("./db/dbConfig.js");
 
-app.get("/test", async (req, res) => {
-  try {
-    const allDays = await db.any("SELECT * FROM test");
-    res.json(allDays);
-  } catch (err) {
-    res.json(err);
-  }
-});
+// app.get("/test", async (req, res) => {
+//   try {
+//     const allDays = await db.any("SELECT * FROM test");
+//     res.json(allDays);
+//   } catch (err) {
+//     res.json(err);
+//   }
+// });
 
 /////////////////////////////////////
 // REMOVE AFTER SUCCESSFUL DEPLOYMENT
