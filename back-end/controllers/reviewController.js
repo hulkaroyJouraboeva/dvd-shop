@@ -15,7 +15,7 @@ reviewsRoute.get('/', async (request, response) => {
 
 reviewsRoute.get('/:id', async (request, response) => {
     const review = await getOneReview(request.params.id);
-    if (review) {
+    if (review.id) {
         response.status(200).json(review);
     } else {
         response.status(404).json({error: 'review not found'});
