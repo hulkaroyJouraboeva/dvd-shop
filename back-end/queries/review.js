@@ -1,7 +1,6 @@
 const database = require('../db/dbConfig');
 
 const getAllReviews = async (id) => {
-    console.log('inside query function')
     try {
         const allReviews = await database.any(`
             SELECT * FROM reviews_tb WHERE dvd_id=$1
