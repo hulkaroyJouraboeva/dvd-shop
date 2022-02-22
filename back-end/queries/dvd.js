@@ -35,34 +35,38 @@ const deleteDvd = async (id) => {
     };
 };
 
-const updateDvd = async ({ title, image, release_date, runtime, director, is_favorite }, id) => {
+const updateDvd = async ({ name, image, release_date, runtime, director, is_favorite, description, price, rating, featured }, id) => {
     try {
         const updatedDvd = await database.one(`
             UPDATE dvd_tb
             SET 
-                title=$1,
+                name=$1,
                 image=$2,
                 release_date=$3,
                 runtime=$4,
                 director=$5,
                 is_favorite=$6
-            WHERE id=$7 RETURNING * ;
-        `, [title, image, release_date, runtime, director, is_favorite, id]);
+                description=$7
+                price=$8
+                rating=$9
+                featured=$10
+            WHERE id=$11 RETURNING * ;
+        `, [name, image, release_date, runtime, director, is_favorite, description, price, rating, featured, id]);
         return updatedDvd;
     } catch(error) {
         return error;
     };
 };
 
-const postDvd = async ({ title, image, release_date, runtime, director, is_favorite }) => {
+const postDvd = async ({ name, image, release_date, runtime, director, is_favorite, description, price, rating, featured }) => {
     try {
         const postedDvd = await database.one(`
             INSERT INTO dvd_tb
-                (title, image, release_date, runtime, director, is_favorite)
+                (name, image, release_date, runtime, director, is_favorite, description, price, rating, featured)
             VALUES
-                ($1, $2, $3, $4, $5, $6) 
+                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) 
             RETURNING *
-        `, [title, image, release_date, runtime, director, is_favorite]);
+        `, [name, image, release_date, runtime, director, is_favorite, description, price, rating, featured]);
         return postedDvd;
     } catch(error) {
         return error;
