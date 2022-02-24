@@ -13,6 +13,17 @@ img {
   align-items: center;
 }
 
+.home {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 70px;
+  /* justify-content: space-evenly; */
+  justify-items: center;
+  /* align-content: space-evenly; */
+  /* align-items: center; */
+
+}
+
 * {
   text-align: center;
 }
