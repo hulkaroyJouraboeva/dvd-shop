@@ -19,14 +19,14 @@ CREATE TABLE dvd_tb (
     featured BOOLEAN
 );
 
-DROP TABLE IF EXISTS reviews_tb;
+-- DROP TABLE IF EXISTS reviews_tb;
 
-CREATE TABLE reviews_tb (
-    id SERIAL PRIMARY KEY,
-    reviewer TEXT NOT NULL,
-    content TEXT NOT NULL,
-    rating INT,
-    CHECK (rating >= 0 AND rating <= 10),
-    dvd_id INTEGER REFERENCES dvd_tb (id)
-    ON DELETE CASCADE
-);
+-- CREATE TABLE reviews_tb (
+--     id SERIAL PRIMARY KEY,
+--     reviewer TEXT NOT NULL,
+--     content TEXT NOT NULL,
+--     rating INT,
+--     CHECK (rating >= 0 AND rating <= 10),
+--     dvd_id INTEGER REFERENCES dvd_tb (id)
+--     ON DELETE CASCADE
+-- );
