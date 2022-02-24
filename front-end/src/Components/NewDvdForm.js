@@ -82,6 +82,24 @@ export default function NewDvdForm() {
                         placeholder="dvd's director"
                         onChange={handleTextChange}
                     />
+                <label htmlFor="price">price:</label>
+                    <input
+                        id="price"
+                        type="number"
+                        name="price"
+                        value={price}
+                        placeholder="price in integer dollars"
+                        onChange={handleTextChange}
+                    />
+                <label htmlFor="rating">rating/s:</label>
+                    <input
+                        id="rating"
+                        type="number"
+                        name="rating"
+                        value={rating}
+                        placeholder="dvd's rating"
+                        onChange={handleTextChange}
+                    />
                 <br />
                 <button type="submit">Submit</button>
             </form>

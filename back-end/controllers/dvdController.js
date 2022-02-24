@@ -49,7 +49,8 @@ dvdsRoute.put('/:id', async (request, response) => {
 })
 
 dvdsRoute.post('/', async (request, response) => {
-    const postedDvd = await postDvd(request.body);
+    const temp = { ...request.body };
+    const postedDvd = await postDvd(temp);
     
     postedDvd.id
     ? response.status(200).json({ success: true, payload: postedDvd })

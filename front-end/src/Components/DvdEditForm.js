@@ -10,12 +10,12 @@ export default function DvdEditForm() {
         name: '',
         image: '',
         release_date: '',
-        runtime: null,
+        runtime: 0,
         director: '',
         is_favorite: false,
         description: '',
         price: 0,
-        rating: null,
+        rating: 0,
         featured: false,
     });
     const { name, image, release_date, runtime, director, is_favorite, description, price, rating, featured } = dvd; 
@@ -46,15 +46,17 @@ export default function DvdEditForm() {
     };
 
     const handleSubmit = (event) => {
+        console.log('inside handle submit')
         event.preventDefault();
         updateDvd(dvd, id)
     }
-
+    
     const updateDvd = (updatedDvd, id) => {
+        console.log('inside update dvd')
         axios
             .put(`${API}/dvds/${id}`, updatedDvd)
             .then(() => navigate('/dvds'), (error) => console.error(error))
-            .catch((error) => console.warn(error));
+            .catch((error) => console.warn("warn", error));
     };
 
     return (
@@ -102,6 +104,24 @@ export default function DvdEditForm() {
                         name="director"
                         value={director}
                         placeholder="dvd's director"
+                        onChange={handleTextChange}
+                    />
+                <label htmlFor="price">price:</label>
+                    <input
+                        id="price"
+                        type="number"
+                        name="price"
+                        value={price}
+                        placeholder="price in integer dollars"
+                        onChange={handleTextChange}
+                    />
+                <label htmlFor="rating">rating/s:</label>
+                    <input
+                        id="rating"
+                        type="number"
+                        name="rating"
+                        value={rating}
+                        placeholder="dvd's rating"
                         onChange={handleTextChange}
                     />
                 <br />
