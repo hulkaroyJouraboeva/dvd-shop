@@ -1,30 +1,24 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-const API = process.env.REACT_APP_API_URL;
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
+import FourOFour from './Pages/FourOFour';
+import NavBar from './Components/NavBar';
+import Index from './Pages/Index';
+import Edit from './Pages/Edit';
+import Home from './Pages/Home';
+import Show from './Pages/Show';
+import New from './Pages/New';
 
-console.log(API);
-function App() {
-  const [days, setDays] = useState([]);
-  useEffect(() => {
-    axios
-      .get(`${API}/test`)
-      .then(
-        (response) => {
-          setDays(response.data);
-        },
-        (error) => console.log("get", error)
-      )
-      .catch((c) => console.warn("catch", c));
-  }, []);
+export default function App() {
   return (
-    <div>
-      <ul>
-        {days.map((day) => (
-          <li key={day.name}>{day.name}</li>
-        ))}
-      </ul>
-    </div>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/dvds' element={<Index />} />
+        <Route path='/dvds/:id' element={<Show />} />
+        <Route path='/dvds/:id/edit' element={<Edit />} />
+        <Route path='/dvds/new' element={<New />} />
+        <Route path='*' element={<FourOFour />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
-
-export default App;
+};
