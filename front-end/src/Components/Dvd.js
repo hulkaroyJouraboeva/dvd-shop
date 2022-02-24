@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import { textAlign } from "@mui/system";
 
 export default function Dvd({ dvd }) {
-    const {  id, name, image, price, rating, featured } = dvd;
+    const {  id, name, image, price, rating } = dvd;
     return (
         <Card sx={{ maxWidth: 400 }} className='card1'>
             <CardContent>
@@ -23,7 +23,6 @@ export default function Dvd({ dvd }) {
                 <Typography variant="body2" color="text.secondary">
                     <p>Price: ${price}</p>
                     <p>Rating: {rating}</p>
-                    <p>{featured}</p>
                 </Typography>
             </CardContent>
 
