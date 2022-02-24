@@ -35,7 +35,7 @@ const deleteDvd = async (id) => {
     };
 };
 
-const updateDvd = async ({ name, image, release_date, runtime, director, is_favorite, description, price, rating, featured }, id) => {
+const updateDvd = async (id, { name, image, release_date, runtime, director, is_favorite, description, price, rating, featured }) => {
     try {
         const updatedDvd = await database.one(`
             UPDATE dvd_tb
@@ -45,13 +45,14 @@ const updateDvd = async ({ name, image, release_date, runtime, director, is_favo
                 release_date=$3,
                 runtime=$4,
                 director=$5,
-                is_favorite=$6
-                description=$7
-                price=$8
-                rating=$9
+                is_favorite=$6,
+                description=$7,
+                price=$8,
+                rating=$9,
                 featured=$10
-            WHERE id=$11 RETURNING * ;
+            WHERE id=$11 RETURNING *
         `, [name, image, release_date, runtime, director, is_favorite, description, price, rating, featured, id]);
+        console.log('query side:', updatedDvd)
         return updatedDvd;
     } catch(error) {
         return error;

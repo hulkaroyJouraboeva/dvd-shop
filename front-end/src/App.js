@@ -17,7 +17,7 @@ export default function App() {
         <Route path='/dvds/:id' element={<Show />} />
         <Route path='/dvds/:id/edit' element={<Edit />} />
         <Route path='/dvds/new' element={<New />} />
-        <Route path='*' element={<FourOFour />} />
+        {/* <Route path='*' element={<FourOFour />} /> */}
       </Routes>
     </BrowserRouter>
   );

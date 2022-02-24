@@ -41,12 +41,12 @@ dvdsRoute.delete('/:id', async (request, response) => {
 });
 
 dvdsRoute.put('/:id', async (request, response) => {
-    const updatedDvd = await updateDvd(request.body, request.params.id);
-
+    const updatedDvd = await updateDvd(request.params.id, request.body);
+    console.log(updatedDvd)
     updatedDvd.id
     ? response.status(200).json({ success: true, payload: updatedDvd })
     : response.status(404).json({ error: `couldn't update dvd with id: ${request.params.id}` });
-})
+});
 
 dvdsRoute.post('/', async (request, response) => {
     const temp = { ...request.body };
