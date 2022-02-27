@@ -1,16 +1,27 @@
-# Welcome to your online DVD Shop
+# Free DVD shop for friends, fellows, & family
+
+A work-in-progress project that started off as a Pursuit Cumulative Technical Assessment assignment, and met all requirements or User Stories.
+
+## What now?
+
+Currently working on bringing this project into life. The goal is to test my app in real work scenario and share my love for movies by giving away relic of a stack of the DVDs I collected over the years to people I know and can deliver to.
+
+## To Dos
+
+- Create product checkout form for users
+  - Cart feature too
+- Create an admin mode for the RUD part of CRUD
+- Add all DVDs for donation to database
+- Implement backend's reviews sub-route in front end
+  - fix the bug with the one-to-many relationship
+  
+## Deployment Links
 
 - [Heroku Deployment](https://dvd-shop.herokuapp.com/)
 - [Netlify Deployment](https://dvd-shop.netlify.app/)
-<!-- 
-- select `use this template`
-- clone this repo
 
-## testing 123
 
-### Project Structure
-
-```
+<!-- ```
 ├── README.md (what you are currently reading)
 ├── back-end (a basic express app)
 ├── front-end (a basic create-react-app)
